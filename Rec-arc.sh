@@ -8,13 +8,9 @@
 #
 
 # === CONFIGURE HERE ===
-# Each triplet is: SOURCE:DEST:NODENAME
+# Each triplet is: SOURCE:DEST:NODENAME    Example: "/PATH-TO-YOUR-RECORDINGS/1234/:/PATH-TO-YOUR-BACKUPS/Backups/:node-1234"
 FOLDERS=(
-    "/etc/asterisk/local/Recordings/1250/:/etc/asterisk/local/Recordings/Backups/:node-1250"
-    "/etc/asterisk/local/Recordings/1450/:/etc/asterisk/local/Recordings/Backups/:node-1450"
-    "/etc/asterisk/local/Recordings/1550/:/etc/asterisk/local/Recordings/Backups/:node-1550"
-    "/etc/asterisk/local/Recordings/1650/:/etc/asterisk/local/Recordings/Backups/:node-1650"
-    "/etc/asterisk/local/Recordings/611026/:/etc/asterisk/local/Recordings/Backups/:node-611026"
+    "/etc/asterisk/local/Recordings/1234/:/etc/asterisk/local/Recordings/Backups/:node-1234"
 )
 
 DATE=$(date +%Y-%m-%d)
@@ -27,10 +23,8 @@ for entry in "${FOLDERS[@]}"; do
 
     ARCHIVE="$DEST/$DATE-$NODE.zip"
 
-    # Skip if source folder doesn't exist
     [ ! -d "$SRC" ] && continue
 
-    # Ensure destination exists
     mkdir -p "$DEST"
 
     cd "$SRC" || continue

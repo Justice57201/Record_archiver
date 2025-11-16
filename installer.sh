@@ -6,7 +6,7 @@
 #
 
 # ===== CONFIGURE THIS URL =====
-SCRIPT_URL="https://raw.githubusercontent.com/USERNAME/REPO/BRANCH/Rec-arc.sh"
+SCRIPT_URL="https://raw.githubusercontent.com/Justice57201/Record_archiver/main/Rec-arc.sh"
 
 # Must be root
 if [ "$EUID" -ne 0 ]; then
@@ -31,4 +31,3 @@ crontab /tmp/cron_tmp
 rm -f /tmp/cron_tmp
 
 echo "Installation complete."
-
